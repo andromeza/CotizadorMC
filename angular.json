@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "CotizadorMC:build:production"
+              "buildTarget": "CotizadorMC:build:production"
             },
             "development": {
-              "browserTarget": "CotizadorMC:build:development"
+              "buildTarget": "CotizadorMC:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "CotizadorMC:build"
+            "buildTarget": "CotizadorMC:build"
           }
         },
         "test": {
