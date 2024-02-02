@@ -10,7 +10,7 @@
               optionLabel="label" 
               [showClear]="true" 
               (onChange)="handleChange($event)" 
-              placeholder="Seleccionar Precio">
+              placeholder="Seleccionar tamaño">
   </p-dropdown>
 </div>
 
@@ -31,7 +31,7 @@
               [(ngModel)]="discountSelected" 
               optionLabel="label" 
               [showClear]="true" 
-              (onChange)="handleChange($event)" 
+              (onChange)="handleChangeD($event)" 
               placeholder="Seleccionar Descuento">
   </p-dropdown>
 </div>
@@ -44,9 +44,31 @@
 </div>
 
 
-<p-dialog header="Header" [(visible)]="visible" [style]="{width: '50vw'}">
-  <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
+<p-dialog header="Cotizacion de Estadia" [(visible)]="visible" [style]="{width: '50vw'}">
+  <div class="row">
+    <div class="col"><h4>Precio:</h4></div>
+    <div class="col" style="text-align: end;">L.{{myprice}}</div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col"><h4>Noches de estadia:</h4></div>
+    <div class="col" style="text-align: end;">{{night}}</div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col"><h4>Precio Total:</h4></div>
+    <div class="col" style="text-align: end;">L{{total}}</div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col"><h4>Precio Final</h4></div>
+    <div class="col" style="text-align: end;">L{{ftotal}}</div>
+  </div>
+  <hr>
+  
+  <div class="row" style="text-align: center;">
+    <p-button label="Cerrar" (click)="visible = false" severity="danger"></p-button>
+  </div>
+
+  
 </p-dialog>

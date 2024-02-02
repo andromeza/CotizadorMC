@@ -14,6 +14,14 @@ export class AppComponent {
   discountSelected: any;
   dateE: any;
   dateS: any;
+  visible: boolean = false;
+
+  night: any;
+  myprice: any;
+  total: any;
+  ftotal: any;
+  mydiscount: any;
+
 
   constructor(){
     this.items = [
@@ -47,13 +55,38 @@ export class AppComponent {
   }
 
   handleChange(event: any) {
-    console.log('Opción seleccionada:', event.value);
-    // Puedes realizar acciones adicionales aquí si es necesario
+      // Obtener el valor seleccionado del evento
+      this.myprice = this.priceSelected.value;
   }
 
-  visible: boolean = false;
+  handleChangeD(event: any) {
+    // Obtener el valor seleccionado del evento
+    this.mydiscount = this.discountSelected.value;
+}
 
-    showDialog() {
+  showDialog() {
         this.visible = true;
+        this.quote();
+  }
+
+  quote(){
+
+    
+
+    const diferenciaMilisegundos: number = this.dateS.getTime() - this.dateE.getTime();
+    const cantidadNoches: number = Math.ceil(diferenciaMilisegundos / (1000 * 60 * 60 * 24));
+
+    this.night = cantidadNoches;
+    
+    if (this.mydiscount !== 0) {
+      this.total = this.myprice * this.night
+      this.ftotal = this.total - (this.total * (this.mydiscount/100))
+      
+    }else{
+      this.total = this.myprice * this.night
+      this.ftotal = this.total
     }
+
+
+  }
 }
