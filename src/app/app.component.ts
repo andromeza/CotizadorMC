@@ -23,7 +23,7 @@ export class AppComponent {
   myprice: any;
   total: any;
   ftotal: any;
-  mydiscount: any;
+  mydiscount=0;
   adicional= 0;
 
 
