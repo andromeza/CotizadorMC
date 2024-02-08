@@ -10,17 +10,21 @@ export class AppComponent {
   items: any[] = [];
   prices: any[] = [];
   discount: any[] = [];
+  aditionalTD: any[] = [];
+
   priceSelected: any;
   discountSelected: any;
   dateE: any;
   dateS: any;
   visible: boolean = false;
+  myaditional: any;
 
   night: any;
   myprice: any;
   total: any;
   ftotal: any;
   mydiscount: any;
+  adicional= 0;
 
 
   constructor(){
@@ -41,6 +45,14 @@ export class AppComponent {
       { label: '30%', value: '30' },
       { label: '40%', value: '40' },
       { label: '50%', value: '50' }
+    ];
+
+    this.aditionalTD = [
+      { label: '5% Adicional', value: '5'},
+      { label: '10% Adicional', value: '10'},
+      { label: '15% Adicional', value: '15'},
+      { label: '20% Adicional', value: '20'},
+      { label: '25% Adicional', value: '25'}
     ];
   }
 
@@ -64,6 +76,12 @@ export class AppComponent {
     this.mydiscount = this.discountSelected.value;
 }
 
+handleChangeA(event: any) {
+  // Obtener el valor seleccionado del evento
+  this.adicional = this.myaditional.value;
+  console.log(this.adicional)
+}
+
   showDialog() {
         this.visible = true;
         this.quote();
@@ -71,21 +89,19 @@ export class AppComponent {
 
   quote(){
 
-    
-
     const diferenciaMilisegundos: number = this.dateS.getTime() - this.dateE.getTime();
     const cantidadNoches: number = Math.ceil(diferenciaMilisegundos / (1000 * 60 * 60 * 24));
 
     this.night = cantidadNoches;
     
-    if (this.mydiscount !== 0) {
+    
+    if (this.mydiscount !== 0 ) {
       this.total = this.myprice * this.night
-      this.ftotal = this.total - (this.total * (this.mydiscount/100))
+      this.ftotal = (this.total - (this.total * (this.mydiscount/100))) + (this.total * (this.adicional/100))
       
-    }else{
-      this.total = this.myprice * this.night
-      this.ftotal = this.total
     }
+
+
 
 
   }
