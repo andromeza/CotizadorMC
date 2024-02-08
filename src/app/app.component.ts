@@ -94,15 +94,8 @@ handleChangeA(event: any) {
 
     this.night = cantidadNoches;
     
-    
-    if (this.mydiscount !== 0 ) {
-      this.total = this.myprice * this.night
-      this.ftotal = (this.total - (this.total * (this.mydiscount/100))) + (this.total * (this.adicional/100))
+    this.total = this.myprice * this.night
+    this.ftotal = (this.total - (this.total * (this.mydiscount/100))) + (this.total * (this.adicional/100))
       
-    }
-
-
-
-
   }
 }
