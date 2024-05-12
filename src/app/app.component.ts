@@ -35,8 +35,8 @@ export class AppComponent {
     ];
 
     this.prices = [
-      { label: 'Raza Pequeña', value: '490'},
-      { label: 'Raza Mediana y Grande', value: '590'}
+      { label: 'Raza Pequeña', value: '590'},
+      { label: 'Raza Mediana y Grande', value: '690'}
     ];
 
     this.discount = [

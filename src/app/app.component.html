@@ -13,7 +13,8 @@
                 optionLabel="label" 
                 [showClear]="true" 
                 (onChange)="handleChange($event)" 
-                placeholder="Seleccionar tamaño">
+                placeholder="Seleccionar tamaño"
+                [ngStyle]="{ 'width': '100%' }">
     </p-dropdown>
   </div>
   
@@ -41,14 +42,15 @@
   </div>
 
 
-  <div class="card flex justify-content-center" style="text-align: center;margin-top: 20px;">
+  <div class="card flex justify-content-center" style="text-align: center;margin-top: 20px;width: 100%;">
     <h4>Costo adicional</h4>
     <p-dropdown [options]="aditionalTD" 
                 [(ngModel)]="myaditional" 
                 optionLabel="label" 
                 [showClear]="true" 
                 (onChange)="handleChangeA($event)" 
-                placeholder="Costo adicional" >
+                placeholder="Costo adicional" 
+                [ngStyle]="{ 'width': '100%' }">
     </p-dropdown>
   </div>
   
